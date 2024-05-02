@@ -5,13 +5,12 @@ on:
     tags:
       - '*'
 
-permissions:
-  id-token: write # Undocumented OIDC support.
-  packages: write # To publish container images to GHCR
-  contents: write # To create a release
-
 jobs:
   release:
+    permissions:
+      id-token: write # Undocumented OIDC support.
+      packages: write # To publish container images to GHCR
+      contents: write # To create a release
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4 # v3.5.2
